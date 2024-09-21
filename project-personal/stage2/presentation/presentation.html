@@ -1,0 +1,129 @@
+<h2 id="цель-работы">Цель работы</h2>
+<p>Целью данной работы является установка DVWA на дистрибутив Kali
+Linux.</p>
+<h2 id="выполнение-2-го-этапа-индивидуального-проекта">Выполнение 2-го
+этапа индивидуального проекта</h2>
+<p>Переходим в каталог html. Клонируем репозиторий git(рис.1).</p>
+<figure id="fig:001">
+<img src="image/1.png" style="width:70.0%"
+alt="Рис.1:Переход в каталог и клонирование репозитория" />
+<figcaption aria-hidden="true">Рис.1:Переход в каталог и клонирование
+репозитория</figcaption>
+</figure>
+<p>Проверяем, что файлы склонировались правильно и изменяем права
+доступа к папке установки(рис.2).</p>
+<figure id="fig:002">
+<img src="image/2.png" style="width:70.0%"
+alt="Рис.2:Изменение прав доступа" />
+<figcaption aria-hidden="true">Рис.2:Изменение прав доступа</figcaption>
+</figure>
+<p>Переходим к файлу конфигурации в каталоге установки: /dvwa/config.
+Проверяем содержимое каталога (рис.3).</p>
+<figure id="fig:003">
+<img src="image/3.png" style="width:70.0%"
+alt="Рис.3:Переход к файлу конфигурации" />
+<figcaption aria-hidden="true">Рис.3:Переход к файлу
+конфигурации</figcaption>
+</figure>
+<p>Копируем файл конфигурации (config.inc.php.dist) и переименовываем
+его на config.inc.php (рис.4).</p>
+<figure id="fig:004">
+<img src="image/4.png" style="width:70.0%"
+alt="Рис.4:Копирование и переименование файла" />
+<figcaption aria-hidden="true">Рис.4:Копирование и переименование
+файла</figcaption>
+</figure>
+<p>Открываем файл настроек (рис.5) и изменяем пароль (рис.6).</p>
+<figure id="fig:005">
+<img src="image/5.png" style="width:70.0%"
+alt="Рис.5:Открытие файла настроек" />
+<figcaption aria-hidden="true">Рис.5:Открытие файла
+настроек</figcaption>
+</figure>
+<figure id="fig:006">
+<img src="image/6.png" style="width:70.0%"
+alt="Рис.6:Редактирование файла" />
+<figcaption aria-hidden="true">Рис.6:Редактирование файла</figcaption>
+</figure>
+<p>Запускаем базу данных mysql и проверяем, запущен ли процесс
+(рис.7).</p>
+<figure id="fig:007">
+<img src="image/7.png" style="width:70.0%" alt="Рис.7:Запуск mysql" />
+<figcaption aria-hidden="true">Рис.7:Запуск mysql</figcaption>
+</figure>
+<p>Входим в базу данных от имени пользователя root. Появляется командная
+строка с приглашением “MariaDB”(рис.8).</p>
+<figure id="fig:008">
+<img src="image/8.png" style="width:70.0%"
+alt="Рис.8:Вход в базу данных" />
+<figcaption aria-hidden="true">Рис.8:Вход в базу данных</figcaption>
+</figure>
+<p>Далее создаём в ней нового пользователя, используя учётные данные из
+файла config.inc.php. Также предоставляем пользователю привилегии для
+работы с этой базой данных (рис.9).</p>
+<figure id="fig:009">
+<img src="image/9.png" style="width:70.0%" alt="Рис.9:MariaDB" />
+<figcaption aria-hidden="true">Рис.9:MariaDB</figcaption>
+</figure>
+<p>Для настройки сервера apache2 переходим в соответствующую директорию
+(рис.10).</p>
+<figure id="fig:010">
+<img src="image/10.png" style="width:70.0%"
+alt="Рис.10:Переход в каталог apache2" />
+<figcaption aria-hidden="true">Рис.10:Переход в каталог
+apache2</figcaption>
+</figure>
+<p>Открываем для редактирования файл php.ini (рис.11), чтобы включить
+следующие параметры: allow_url_fopen и allow_url_include.</p>
+<figure id="fig:011">
+<img src="image/11.png" style="width:70.0%"
+alt="Рис.11:Редактирование файла" />
+<figcaption aria-hidden="true">Рис.11:Редактирование файла</figcaption>
+</figure>
+<p>Файл большой, поэтому нам потребовалось прокрутить до середины файла,
+чтобы добраться до fopen и изменить значения “off” на ‘on’(рис.12).</p>
+<figure id="fig:012">
+<img src="image/12.png" style="width:70.0%"
+alt="Рис.12:Fopen wrappers" />
+<figcaption aria-hidden="true">Рис.12:Fopen wrappers</figcaption>
+</figure>
+<p>Запускаем сервер Apache и проверяем, запущена ли служба(рис.13).</p>
+<figure id="fig:013">
+<img src="image/13.png" style="width:70.0%"
+alt="Рис.13:Запуск сервера Apache" />
+<figcaption aria-hidden="true">Рис.13:Запуск сервера Apache</figcaption>
+</figure>
+<p>Пробуем открыть DVWA в браузере, введя в адресной строке следующее:
+“127.0.0.1/DVWA/”. Перед нами открылась страница настройки, это
+означает, что мы успешно установили DVWA на Kali Linux(рис.14).</p>
+<figure id="fig:014">
+<img src="image/14.png" style="width:70.0%"
+alt="Рис.14:Запуск DVWA в браузере" />
+<figcaption aria-hidden="true">Рис.14:Запуск DVWA в
+браузере</figcaption>
+</figure>
+<p>Прокручиваем вниз и нажимаем “Create / Reset Database” (Создать /
+сбросить базу данных) (рис.15).</p>
+<figure id="fig:015">
+<img src="image/15.png" style="width:70.0%"
+alt="Рис.15:Создание базы данных" />
+<figcaption aria-hidden="true">Рис.15:Создание базы данных</figcaption>
+</figure>
+<p>И через несколько секунд нас перенаправили на страницу входа в DVWA.
+Авторизуемся с помощью предложенных по умолчанию данных (рис.16).</p>
+<figure id="fig:016">
+<img src="image/16.png" style="width:70.0%" alt="Рис.16:Авторизация" />
+<figcaption aria-hidden="true">Рис.16:Авторизация</figcaption>
+</figure>
+<p>Оказываемся на домашней странице веб-приложения. Можем заметить, что
+существует множество интересных уязвимостей, которые мы можем
+протестировать, например, брутфорс, SQL-инъекция и другие (рис.17). На
+этом установка окончена.</p>
+<figure id="fig:017">
+<img src="image/17.png" style="width:70.0%"
+alt="Рис.17:Домашняя страница DVWA" />
+<figcaption aria-hidden="true">Рис.17:Домашняя страница
+DVWA</figcaption>
+</figure>
+<h1 id="выводы">Выводы</h1>
+<p>Установила веб-приложение DVWA на дистрибутив Kali Linux.</p>
