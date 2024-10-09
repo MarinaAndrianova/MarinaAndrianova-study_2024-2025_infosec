@@ -1,0 +1,171 @@
+<h2 id="цель-работы">Цель работы</h2>
+<p>Научиться использовать Burp Suite в Kali Linux.</p>
+<h1 id="задание">Задание</h1>
+<p>Использование Burp Suite.</p>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Запускаю локальный сервер, на котором открываю веб-приложение DVWA
+для тестирования инструмента Burp Suite (рис. <span class="citation"
+data-cites="fig:001">[-@fig:001]</span>).</p>
+<figure id="fig:001">
+<img src="image/1.png" style="width:70.0%"
+alt="Запуск локального сервера" />
+<figcaption aria-hidden="true">Запуск локального сервера</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-1">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Запускаю инструмент Burp Suite (рис. <span class="citation"
+data-cites="fig:002">[-@fig:002]</span>).</p>
+<figure id="fig:002">
+<img src="image/2.png" style="width:70.0%" alt="Запуск приложения" />
+<figcaption aria-hidden="true">Запуск приложения</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-2">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Изменение настроек сервера для работы с proxy и захватом данных с
+помощью Burp Suite (рис. <span class="citation"
+data-cites="fig:003">[-@fig:003]</span>).</p>
+<figure id="fig:003">
+<img src="image/4.png" style="width:70.0%" alt="Настройки сервера" />
+<figcaption aria-hidden="true">Настройки сервера</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-3">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Во вкладке Proxy меняю “Intercept is off” на “Intercept is on” (рис.
+<span class="citation" data-cites="fig:004">[-@fig:004]</span>).</p>
+<figure id="fig:004">
+<img src="image/7.png" style="width:70.0%" alt="Настройки Proxy" />
+<figcaption aria-hidden="true">Настройки Proxy</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-4">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Чтобы Burp Suite исправно работал с локальным сервером, наобходимо
+установить параметр <code>network_allow_hijacking_loacalhost</code> на
+<code>true</code> (рис. <span class="citation"
+data-cites="fig:005">[-@fig:005]</span>).</p>
+<figure id="fig:005">
+<img src="image/9.png" style="width:70.0%" alt="Настройки параметров" />
+<figcaption aria-hidden="true">Настройки параметров</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-5">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Пытаюсь зайти в браузере на DVWA, тут же во вкладки Proxy появляется
+захваченный запрос. Нажимаем “Forward”, чтобы загрузить страницу (рис.
+<span class="citation" data-cites="fig:006">[-@fig:006]</span>).</p>
+<figure id="fig:006">
+<img src="image/10.png" style="width:70.0%"
+alt="Получаемые запросы сервера" />
+<figcaption aria-hidden="true">Получаемые запросы сервера</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-6">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Загрузилась страница авторизации, текст запроса поменялся (рис. <span
+class="citation" data-cites="fig:007">[-@fig:007]</span>).</p>
+<figure id="fig:007">
+<img src="image/12.png" style="width:70.0%" alt="Изменение запроса" />
+<figcaption aria-hidden="true">Изменение запроса</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-7">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Попробуем ввести неправильные, случайные данные в веб-приложении и
+нажмем <code>Login</code>. В запросе увидим строку, в которой
+отображаются введенные нами данные, то есть поле для ввода (рис. <span
+class="citation" data-cites="fig:008">[-@fig:008]</span>).</p>
+<figure id="fig:008">
+<img src="image/14.png" style="width:70.0%"
+alt="Ввод случайных данных" />
+<figcaption aria-hidden="true">Ввод случайных данных</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-8">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Изменяем значение типа атаки на Cluster bomb и проставляем
+специальные символы у тех данных в форме для ввода, которые будем
+пробивать, то есть у имени пользователя и пароля (рис. <span
+class="citation" data-cites="fig:009">[-@fig:009]</span>).</p>
+<figure id="fig:009">
+<img src="image/17.png" style="width:70.0%"
+alt="Изменение типа атаки" />
+<figcaption aria-hidden="true">Изменение типа атаки</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-9">Выполнение 5-го
+этапа индивидуального проекта</h2>
+<p>Так как мы отметили два параметра для подбора, то нам нужно два
+списка со значениями для подбора. Заполняем первый список в
+<code>Payload setting</code>. Переключаемся на второй список и добавляем
+значения в него. В строке request count видим нужное количество
+запросов, чтобы проверить все возможные пары пользователь-пароль (рис.
+<span class="citation" data-cites="fig:010">[-@fig:010]</span>).</p>
+<figure id="fig:010">
+<img src="image/19.png" style="width:70.0%" alt="Второй Simple list" />
+<figcaption aria-hidden="true">Второй Simple list</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-10">Выполнение
+5-го этапа индивидуального проекта</h2>
+<p>Запускаю атаку и начинаю подбор (рис. <span class="citation"
+data-cites="fig:011">[-@fig:011]</span>).</p>
+<figure id="fig:011">
+<img src="image/21.png" style="width:70.0%"
+alt="Подбор логина и пароля" />
+<figcaption aria-hidden="true">Подбор логина и пароля</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-11">Выполнение
+5-го этапа индивидуального проекта</h2>
+<p>При открытии результата каждого post-запроса можно увидеть полученный
+get-запрос, в нем видно, куда нас перенаправило после выполнения ввода
+пары пользователь-пароль. Проверим результат пары admin-password во
+вкладке Response, теперь нас перенаправляет на страницу index.php,
+значит пара должна быть верной (рис. <span class="citation"
+data-cites="fig:012">[-@fig:012]</span>).</p>
+<figure id="fig:012">
+<img src="image/23.png" style="width:70.0%" alt="Результат запроса" />
+<figcaption aria-hidden="true">Результат запроса</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-12">Выполнение
+5-го этапа индивидуального проекта</h2>
+<p>Дополнительная проверка с использованием Repeater, нажимаем на нужный
+нам запрос правой кнопкой мыши и жмем “Send to Repeater”. Переходим во
+вкладку “Repeater” (рис. <span class="citation"
+data-cites="fig:013">[-@fig:013]</span>).</p>
+<figure id="fig:013">
+<img src="image/24.png" style="width:70.0%"
+alt="Вкладка Repeater после доп. проверки результата" />
+<figcaption aria-hidden="true">Вкладка Repeater после доп. проверки
+результата</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-13">Выполнение
+5-го этапа индивидуального проекта</h2>
+<p>Нажимаем “send”, получаем в Response в результат перенаправление на
+index.php (рис. <span class="citation"
+data-cites="fig:014">[-@fig:014]</span>).</p>
+<figure id="fig:014">
+<img src="image/25.png" style="width:70.0%" alt="Окно Response" />
+<figcaption aria-hidden="true">Окно Response</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-14">Выполнение
+5-го этапа индивидуального проекта</h2>
+<p>После нажатия на <code>Follow redirection</code>, получим
+нескомпилированный html код в окне Response (рис. <span class="citation"
+data-cites="fig:015">[-@fig:015]</span>).</p>
+<figure id="fig:015">
+<img src="image/26.png" style="width:70.0%"
+alt="Изменение в окне Response" />
+<figcaption aria-hidden="true">Изменение в окне Response</figcaption>
+</figure>
+<h2 id="выполнение-5-го-этапа-индивидуального-проекта-15">Выполнение
+5-го этапа индивидуального проекта</h2>
+<p>Далее в подокне Render получим то, как выглядит полученная страница
+(рис. <span class="citation"
+data-cites="fig:016">[-@fig:016]</span>).</p>
+<figure id="fig:016">
+<img src="image/27.png" style="width:70.0%" alt="Полученная страница" />
+<figcaption aria-hidden="true">Полученная страница</figcaption>
+</figure>
+<h1 id="выводы">Выводы</h1>
+<p>При выполнении 5-го этапа индивидуального проекта научилась
+использовать инструмент Burp Suite в Kali Linux.</p>
+<h1 class="unnumbered" id="список-литературы">Список литературы</h1>
+<ol type="1">
+<li>Парасрам, Ш. Kali Linux: Тестирование на проникновение и
+безопасность : Для профессионалов. Kali Linux / Ш. Парасрам, А. Замм, Т.
+Хериянто, и др. – Санкт-Петербург : Питер, 2022. – 448 сс.</li>
+</ol>
